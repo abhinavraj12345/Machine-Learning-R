@@ -4,6 +4,7 @@ train=y[1:80,]
 test=y[81:100,]
 knn<-function(x,y,k){
 test_label=c()
+#--------------------- function will take train data,test data & k and will give the accuracy-------------------------------------
 for (i in 1:dim(y)[1]) {
 	z=matrix( rep(y[i,],dim(x)[1]),dim(x)[1],byrow=T )
 	d_vec=sqrt(rowSums((x[,-dim(x)[2]]-z[,-dim(z)[2]])^2))	#distance calculated
@@ -26,7 +27,6 @@ for (i in 1:dim(y)[1]) {
 }#END:for
 	original_label= y[,dim(y)[2]]
 	accuracy= (sum(original_label == test_label)/dim(y)[1])*100
-  print(original_label)
-return(test_label)
+return(accuracy)
 }#END:function
 

@@ -1,4 +1,4 @@
-x=data.matrix(iris[-c(101:150),])
+x=data.matrix(iris[-c(1:50),])
 y=x[sample(100,replace=FALSE),]
 train=y[1:80,]
 test=y[81:100,]
@@ -29,4 +29,13 @@ for (i in 1:dim(y)[1]) {
 	accuracy= (sum(original_label == test_label)/dim(y)[1])*100
 return(accuracy)
 }#END:function
+#---------------------------------------------plot between k and accuracy-----------------------------------------------------
+aa=seq(1,19,by=2)
+bb=c()
+for(i in 1:length(aa)){
+  bb[i]=knn(train,test,aa[i])
+}
+
+plot(aa,bb,type='b',pch=20,xlab="K",ylab="accuracy")
+
 

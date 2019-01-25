@@ -44,4 +44,4 @@ bb=c()
 for(i in 1:length(aa)){
   bb[i]=knn(train,test,aa[i])
 }
-plot(aa,bb,type='b',pch=20)
+plot(aa,bb,type='b',pch=20,xlab="K",ylab="MCC")

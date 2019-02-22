@@ -37,5 +37,5 @@ accuracy.matrix=t(aa)
 #---------------printing accuracy matrix--------------------------
 print(accuracy.matrix)
 l=which(accuracy.matrix == max(accuracy.matrix), arr.ind = TRUE)
-cat(sprintf("\n  accuracy is %f for mtry = %d and ntree = %d in cross-validation \n \n",
+cat(sprintf("\n  accuracy is %f for mtry = %d and ntree = %d in cross-validation. \n \n",
             max(accuracy.matrix),x[l[1,2]],y[l[1,1]]))

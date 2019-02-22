@@ -27,7 +27,7 @@ CV.random.forest<-function(data,fold,a,b){ #other function parameters){
 
 x<-seq(2,30,by=2)
 y<-seq(50,500,by=50)
-aa=a=matrix(NA,nrow=length(x),length(y))
+aa=matrix(NA,nrow=length(x),length(y))
 for(i in 1:length(x)){
   for(j in 1:length(y)){
     aa[i,j]=CV.random.forest(data,fold,x[i],y[j])

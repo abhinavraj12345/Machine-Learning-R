@@ -59,7 +59,7 @@ for(i in 1:length(x)){
 }#END:i
 accuracy.matrix=t(aa)
 l=which(accuracy.matrix == max(accuracy.matrix), arr.ind = TRUE)
-cat(sprintf("\n Maximum MCC is %f for mtry = %d and ntree = %d in cross-validation with subset attributes. \n \n",
+cat(sprintf("\n Maximum MCC is %f for mtry = %d and ntree = %d in cross-validation. \n \n",
             max(accuracy.matrix),x[l[1,2]],y[l[1,1]]))
 #----------------------------------------------------------------------------------------
 finaltree=randomForest(formula=Loan_Status~.,data=up_train,mtry=x[l[1,2]],ntree=y[l[1,1]])
